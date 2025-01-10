@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prox3D - Em breve no ar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2d2d2d, #1c1c1c);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            color: #ff3e6c;
+            margin: 0;
+            animation: bounce 2s infinite;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0 0;
+            color: #b3b3b3;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prox3D</h1>
+        <p>Estamos trabalhando para trazer algo incrível. Em breve estaremos no ar!</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Prox3D. Todos os direitos reservados.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const text = document.querySelector("p");
+            let dots = 0;
+
+            setInterval(() => {
+                dots = (dots + 1) % 4;
+                text.textContent = `Estamos trabalhando para trazer algo incrível. Em breve estaremos no ar${".".repeat(dots)}`;
+            }, 500);
+        });
+    </script>
+</body>
+</html>
