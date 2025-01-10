@@ -33,8 +33,18 @@
 
         p {
             font-size: 1.5rem;
-            margin: 20px 0 0;
+            margin: 20px 0;
             color: #b3b3b3;
+        }
+
+        .loader {
+            margin: 30px auto;
+            width: 60px;
+            height: 60px;
+            border: 6px solid transparent;
+            border-top: 6px solid #ff3e6c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
         @keyframes fadeIn {
@@ -57,6 +67,15 @@
             }
         }
 
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         .footer {
             position: absolute;
             bottom: 10px;
@@ -70,23 +89,12 @@
 <body>
     <div class="container">
         <h1>Prox3D</h1>
-        <p>Estamos trabalhando para trazer algo incrível. Em breve estaremos no ar!</p>
+        <p>Estamos trabalhando para trazer algo incrível. Em breve estaremos no ar.</p>
+        <div class="loader"></div>
     </div>
 
     <div class="footer">
         <p>&copy; 2025 Prox3D. Todos os direitos reservados.</p>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const text = document.querySelector("p");
-            let dots = 0;
-
-            setInterval(() => {
-                dots = (dots + 1) % 4;
-                text.textContent = `Estamos trabalhando para trazer algo incrível. Em breve estaremos no ar${".".repeat(dots)}`;
-            }, 500);
-        });
-    </script>
 </body>
 </html>
